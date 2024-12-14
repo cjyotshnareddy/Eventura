@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <div id="serviceDetails"></div>
+        <h3>Total Cost: <span id="totalCost"></span></h3>
+        <label for="eventDate">Select Event Date:</label>
+        <input type="date" id="eventDate" required>
+
+        <button id="bookEvent">Book My Event</button>
+        <p id="checkoutError" class="error-message"></p>
+    </div>
+    <script src="checkout.js"></script>
+    <!-- <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Checkout</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="checkout-container">
+            <h2>Checkout</h2>
+            <p id="eventName"></p>
+            <p id="eventCost"></p>
+            <button id="bookEventButton">Book My Event</button>
+        </div> -->
+        <script>
+          
+            document.addEventListener("DOMContentLoaded", () => {
+                const eventName = localStorage.getItem('eventName');
+                const eventCost = localStorage.getItem('eventCost');
+    
+                // Display the event details
+                if (eventName && eventCost) {
+                    document.getElementById("eventName").textContent = `Event: ${eventName}`;
+                    document.getElementById("eventCost").textContent = `Total Cost: ₹${eventCost}`;
+                } else {
+                    document.getElementById("eventName").textContent = "No event selected.";
+                    document.getElementById("eventCost").textContent = "";
+                }
+    
+                // Booking functionality
+                document.getElementById("bookEventButton").addEventListener("click", () => {
+                    if (localStorage.getItem("loggedInUser")) {
+                        alert("Event booked successfully!");
+                        window.location.href = "confirmation.html"; // Change to your confirmation page
+                    } else {
+                        alert("You need to log in to book an event.");
+                        window.location.href = "login.html"; // Redirect to login page if not logged in
+                    }
+                });
+            });
+            
+        </script>
+    </body>
+    </html>
+    </body>
+</html>

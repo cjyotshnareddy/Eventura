@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Events</title>
+    <link rel="stylesheet" href="event.css">
+</head>
+<body>
+    <div class="events-container">
+        <h2>My Booked Events</h2>
+        <div class="tabs">
+            <button id="pendingEventsBtn">Pending Events</button>
+            <button id="completedEventsBtn">Completed Events</button>
+        </div>
+        <p id="noEventsMessage">No events booked yet.</p>
+        <ul id="pendingEventsList" class="events-list" style="display: block;"></ul> <!-- Show pending events by default -->
+        <ul id="completedEventsList" class="events-list" style="display: none;"></ul> <!-- Hide completed events by default -->
+        <button id="homebtn" onclick="goTohome()">Go to home</button>
+    </div>
+    <script>
+        function goTohome() {
+            window.location.href = "index.html"; // Redirects to My Events page
+        }
+        </script>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+            const userBookings = bookings[loggedInUser] || [];
+            const noEventsMessage = document.getElementById("noEventsMessage");
+            const pendingEventsList = document.getElementById("pendingEventsList");
+            const completedEventsList = document.getElementById("completedEventsList");
+            const pendingEventsBtn = document.getElementById("pendingEventsBtn");
+            const completedEventsBtn = document.getElementById("completedEventsBtn");
+
+            let hasPendingEvents = false;
+            let hasCompletedEvents = false;
+
+            if (userBookings.length > 0) {
+                noEventsMessage.style.display = "none";
+                userBookings.forEach(event => {
+                    const listItem = document.createElement("li");
+                    const eventDate = new Date(event.date);
+                    const currentDate = new Date();
+
+                    // Check if the event date is in the past or future
+                    if (eventDate < currentDate) {
+                        listItem.innerHTML = `
+                            <strong>${event.service}</strong><br>
+                            Breakdown: <ul>${Object.entries(event.breakdown).map(([key, value]) => `<li>${key}: ₹${value}</li>`).join("")}</ul>
+                            Total Cost: ₹${event.total}<br>
+                            Event Date: ${event.date}<br>
+                            <button class="removeCompletedEventBtn">Remove</button>
+                        `;
+                        completedEventsList.appendChild(listItem);
+                        hasCompletedEvents = true;
+
+                        // Add remove event functionality for completed events
+                        listItem.querySelector('.removeCompletedEventBtn').onclick = () => {
+                            removeEvent(event, true);
+                        };
+                    } else {
+                        const cancelButton = document.createElement("button");
+                        cancelButton.textContent = "Cancel Event";
+                        cancelButton.onclick = () => {
+                            userBookings.splice(userBookings.indexOf(event), 1);
+                            bookings[loggedInUser] = userBookings;
+                            localStorage.setItem("bookings", JSON.stringify(bookings));
+                            location.reload(); // Reload the page to reflect changes
+                        };
+                        listItem.innerHTML = `
+                            <strong>${event.service}</strong><br>
+                            Breakdown: <ul>${Object.entries(event.breakdown).map(([key, value]) => `<li>${key}: ₹${value}</li>`).join("")}</ul>
+                            Total Cost: ₹${event.total}<br>
+                            Event Date: ${event.date}
+                        `;
+                        listItem.appendChild(cancelButton);
+                        pendingEventsList.appendChild(listItem);
+                        hasPendingEvents = true;
+                    }
+                });
+
+                if (!hasPendingEvents) pendingEventsList.style.display = "none";
+                if (!hasCompletedEvents) completedEventsList.style.display = "none";
+            } else {
+                noEventsMessage.style.display = "block";
+            }
+
+            // Toggle visibility for Pending and Completed Events
+            pendingEventsBtn.addEventListener("click", () => {
+                pendingEventsList.style.display = "block";
+                completedEventsList.style.display = "none";
+            });
+
+            completedEventsBtn.addEventListener("click", () => {
+                pendingEventsList.style.display = "none";
+                completedEventsList.style.display = "block";
+            });
+        });
+
+        // Function to remove an event
+        function removeEvent(event, isCompleted) {
+            const loggedInUser = localStorage.getItem("loggedInUser");
+            const bookings = JSON.parse(localStorage.getItem("bookings")) || {};
+            const userBookings = bookings[loggedInUser] || [];
+
+            if (isCompleted) {
+                // Find the index of the event to remove
+                const index = userBookings.findIndex(e => e.service === event.service && e.date === event.date);
+                if (index > -1) {
+                    userBookings.splice(index, 1); // Remove the event
+                }
+            }
+
+            bookings[loggedInUser] = userBookings;
+            localStorage.setItem("bookings", JSON.stringify(bookings));
+            location.reload(); // Reload to show changes
+        }
+        
+    </script>
+    
+</body>
+</html>

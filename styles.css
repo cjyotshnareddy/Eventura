@@ -1,0 +1,320 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #1e73be;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #155b94;
+}
+
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+/* General styles for forms */
+.form-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+/* Input styles */
+input[type="email"],
+input[type="password"],
+input[type="text"],
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Error message styles */
+.error-message {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* Checkout styles */
+.checkout-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#serviceDetails {
+    margin-bottom: 20px;
+    color: black;
+}
+
+/* Confirmation styles */
+.confirmation-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking {
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.booking h3 {
+    margin: 0;
+    color: black;
+}
+h3{
+    color: black;
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .form-container,
+    .checkout-container,
+    .confirmation-container {
+        width: 90%;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="text"],
+    button {
+        font-size: 16px;
+    }
+}
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: #f8f2f2; /* Pastel background */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Form Container Styling */
+.form-container {
+    background-color: #ffffff; /* White form background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow */
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Form Title */
+h2 {
+    margin-bottom: 20px;
+    color: #6d6875; /* Soft pastel purple */
+}
+
+/* Label Styling */
+label {
+    display: block;
+    text-align: left;
+    font-size: 14px;
+    color: #6d6875; /* Consistent pastel shade */
+    margin-bottom: 5px;
+}
+
+/* Input Field Styling */
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #e0cfcf; /* Light pastel border */
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #a5a1aa; /* Pastel highlight */
+}
+
+/* Button Styling */
+button {
+    background-color: #ffcad4; /* Pastel pink */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #eab9c1; /* Slightly darker pastel pink */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #e57373; /* Subtle red for error messages */
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+/* Sign Up Link Styling */
+p {
+    font-size: 14px;
+    color: #6d6875;
+    margin-top: 15px;
+}
+
+a {
+    color: #ffcad4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: rgba(242, 237, 234, 1);
+    color: #333;
+}
+
+.form-container {
+    max-width: 400px; /* Adjust max-width to control the form's width */
+    margin: 100px auto; /* Center the form vertically and horizontally */
+    padding: 20px;
+    background-color: white; /* White background for the form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.form-container h2 {
+    text-align: center; /* Center the heading */
+    color: #7a5e42; /* Darker brown color */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+label {
+    margin-bottom: 5px; /* Space below the label */
+    font-weight: bold; /* Bold labels */
+}
+
+input {
+    width: 100%; /* Full width inputs */
+    padding: 12px; /* Padding inside inputs */
+    border: 1px solid #ccc; /* Border style */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space below each input */
+    font-size: 16px; /* Font size */
+}
+
+button {
+    background-color: #4c3a2e; /* Button color */
+    color: white; /* Text color */
+    padding: 12px; /* Padding inside button */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    font-weight: bold; /* Bold text */
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #8b6c4a; /* Change color on hover */
+}
+
+.error-message {
+    color: red; /* Error message color */
+    text-align: center; /* Center error messages */
+    margin-top: 10px; /* Space above error message */
+}

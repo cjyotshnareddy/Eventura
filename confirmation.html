@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="event.css">
+
+</head>
+<body>
+    <div class="confirmation-container">
+        <h2>Booking Confirmed!</h2>
+        <p>Your event has been successfully booked.</p>
+        
+        <div id="bookingDetails"></div> <!-- Added to display booking details -->
+        
+        <button onclick="goToMyEvents()">Go to My Events</button>
+    </div>
+    <script>
+        function goToMyEvents() {
+            window.location.href = "myEvents.html"; // Redirects to My Events page
+        }
+
+        // Display booking details
+        document.addEventListener("DOMContentLoaded", () => {
+            const lastBooking = JSON.parse(localStorage.getItem("lastBooking"));
+            if (lastBooking) {
+                const bookingDetails = document.getElementById("bookingDetails");
+                bookingDetails.innerHTML = `
+                    <h3>Event: ${lastBooking.service}</h3>
+                    <p>Total Cost: ₹${lastBooking.total}</p>
+                    <p>Event Date: ${lastBooking.date}</p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>

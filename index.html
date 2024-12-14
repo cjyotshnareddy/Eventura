@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <title>Responsive Navbar</title>
+</head>
+
+
+    <body>
+        <header>
+            <nav class="navbar">
+                <div class="navbar-brand">Eventura</div>
+                <div class="navbar-toggle" id="navbar-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="navbar-links" id="navbar-links">
+                    <li><a class="ele"   href="#home">Home</a></li>
+                    <li><a class="ele" href="#about">About</a></li>
+                    <li><a    class="ele" href="#contact">Contact</a></li>
+                    <li><a class="ele"    href="myEvents.html">My Events</a></li>
+                    <li><a id="elf" href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign up</a></li>
+                    
+                    <li><a id="logoutButton" style="display: none;">Logout</a></li>
+
+
+
+                </ul>
+            </nav>
+        </header>
+    <div class="slider">
+       
+        <div class="slides">
+            <div class="slide active">
+                <img src="images/connorsyd0046_copy.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="images/reception_details-62_copy.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="images/harvel-teal-1024.jpg" alt="Image 3">
+            </div>
+            <div class="slide">
+                <img src="images/crowteasers1276.jpg" alt="Image 4">`
+            </div>
+        </div>
+        
+    </div>
+    <section class="about-us" id="about">
+        <h2 id="abt">About Us</h2>
+        <div class="about-content">
+    
+            <div class="about-text">
+               
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ac orci eget dolor egestas scelerisque. Nullam vehicula risus sed nisi efficitur, nec dignissim nulla gravida. Curabitur at lacus eu metus tincidunt scelerisque eget at dui. Aenean non facilisis tortor. Phasellus venenatis dolor sed mi volutpat convallis.</p>
+                <p>Aliquam ut fermentum quam. Integer sit amet ex nec nisi scelerisque sollicitudin a id massa. Donec egestas risus ac sapien vestibulum cursus. Suspendisse potenti.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/female-wedding-planner-working-ceremony-1024x681.jpg" alt="About Us Image">
+            </div>
+        </div>
+    </section>
+    <service>
+    <section  class="services" id="services">
+        <div ></div>
+        <h2>Our <span>Services</span></h2>
+        <div class="service-container">
+            <div class="service-box">
+                <div class="icon"  >&#x1F4CD;</div> <!-- Location Pin Icon -->
+                <h3>Venue Selection</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">&#x1F4E7;</div> <!-- Envelope Icon -->
+                <h3>Invitation Card</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">&#x1F3B5;</div> <!-- Music Note Icon -->
+                <h3>Entertainment</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">&#x1F374;</div> <!-- Cutlery Icon -->
+                <h3>Food and Drinks</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">&#x1F4F8;</div> <!-- Camera Icon -->
+                <h3>Photos and Videos</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+            <div class="service-box">
+                <div class="icon">&#x1F382;</div> <!-- Birthday Cake Icon -->
+                <h3>Custom Foods</h3>
+                <p>Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Praesentium, Fuga.</p>
+            </div>
+        </div>
+    </section>
+</service>
+
+<section class="pricing-section" id="pricing">
+    <h2>OUR PRICING <span class="highlight"></span></h2>
+    <div class="pricing-cards">
+        <div class="pricing-card">
+            <div class="pricing-price">Wedding</div>
+            <ul class="pricing-features">
+                <li>✔ Full Service</li>
+                <li>✔ Decoration</li>
+                <li>✔ Music And Photo</li>
+                <li>✔ Food And Drinks</li>
+                <li>✔ Invitation Card</li>
+            </ul>
+            <button class="checkout-btn" onclick="goToCheckout('Wedding', 50000);">Checkout</button>
+        </div>
+        
+        <div class="pricing-card">
+            <div class="pricing-price">Baby Shower</div>
+            <ul class="pricing-features">
+                <li>✔ Full Service</li>
+                <li>✔ Decoration</li>
+                <li>✔ Music And Photo</li>
+                <li>✔ Food And Drinks</li>
+                <li>✔ Invitation Card</li>
+            </ul>
+            <button class="checkout-btn" onclick="goToCheckout('Baby Shower', 30000);">Checkout</button>
+        </div>
+        
+        <div class="pricing-card">
+            <div class="pricing-price">Retirement Party</div>
+            <ul class="pricing-features">
+                <li>✔ Full Service</li>
+                <li>✔ Decoration</li>
+                <li>✔ Music And Photo</li>
+                <li>✔ Food And Drinks</li>
+                <li>✔ Invitation Card</li>
+            </ul>
+            <button class="checkout-btn" onclick="goToCheckout('Retirement Party', 80000);">Checkout</button>
+        </div>
+        
+        <div class="pricing-card">
+            <div class="pricing-price">Birthday</div>
+            <ul class="pricing-features">
+                <li>✔ Full Service</li>
+                <li>✔ Decoration</li>
+                <li>✔ Music And Photo</li>
+                <li>✔ Food And Drinks</li>
+                <li>✔ Invitation Card</li>
+            </ul>
+            <button class="checkout-btn" onclick="goToCheckout('Birthday', 40000);">Checkout</button>
+        </div>
+        
+        <div class="pricing-card">
+            <div class="pricing-price">Anniversary</div>
+            <ul class="pricing-features">
+                <li>✔ Full Service</li>
+                <li>✔ Decoration</li>
+                <li>✔ Music And Photo</li>
+                <li>✔ Food And Drinks</li>
+                <li>✔ Invitation Card</li>
+            </ul>
+            <button class="checkout-btn" onclick="goToCheckout('Anniversary', 60000);">Checkout</button>
+        </div>
+    </div>
+</section>
+<div class="gall">
+    <div class="container">
+      
+      <div class="intro">
+        <h2>Modern, Detailed, Experiential</h2>
+        <hr class="divider">
+      </div>
+      <div class="gallery">
+        <div class="card">
+          <img id="ima" src="images/a.jpg" >
+          
+        </div>
+        <div class="card">
+          <img id="ima1" src="images/img2.jpg" >
+         
+        </div>
+        <div class="card">
+          <img id="ima2" src="images/26bday.jpg" >
+          
+        </div>
+        
+      </div>
+    </div>
+</div>
+  
+<!-- <div class="gal">
+    <div class="gallery-container">
+        <h2 class="galhead">OUR <span class="highlight">GALLERY</span></h2>
+        <div class="gallery">
+            <div class="gallery-item"><img src="a.jpg" alt="DJ Event"></div>
+            <div class="gallery-item"><img src="Bozburun-Nar-Restaurant.webp" alt="Wedding"></div>
+            <div class="gallery-item"><img src="images (1).jpeg" alt="Festival"></div>
+            <div class="gallery-item"><img src="images (2).jpeg" alt="Cake Table"></div>
+            <div class="gallery-item"><img src="table-set-wedding-reception-with-flowers-candles_962508-15031.avif" alt="Balloon Release"></div>
+            <div class="gallery-item"><img src="wedding-desserts-thumb.jpg" alt="Color Run"></div>
+        </div>
+    </div>
+</div> -->
+<div class="conn">
+    <div class="page-container">
+      <header class="header">
+      
+      
+      </header>
+      <div class="main-content">
+        <div class="content-section">
+           
+          <h2>CONNECT</h2>
+          <form>
+            <input type="text" placeholder="Name" required>
+            <input type="text" placeholder="Number" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Subject" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+          </form>
+        </div>
+        <div class="image-section">
+            <img id="imgg" src="images/c3a0db34e5f294f8f373f6d2864086ad.jpg" alt="Event Venue">
+          </div>
+    </div>
+<!--        
+          <div class="input-group">
+            <input type="text" placeholder="Name" required>
+            
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Number" required>
+            </div>
+
+        <div class="input-group">
+            <input type="email" placeholder="Email" required>
+           
+        </div>
+        <div class="input-group">
+            <input type="text" placeholder="Subject" required>
+        </div>
+        <textarea placeholder="Your Message" required></textarea>
+        <div class="input-group"><button class="conbut" type="submit">Send Message</button></div>
+        
+        </div>
+        <div class="image-section">
+          <img src="a.jpg" alt="Event Venue">
+        </div> -->
+    </div>
+    </div>
+</div>
+
+<!-- <button id="logoutBtn">Logout</button>
+<button id="logoutButton">Logout</button> -->
+
+<script>
+function goToCheckout(eventName, cost) {
+    // Store the selected event details in localStorage
+    localStorage.setItem('eventName', eventName);
+    localStorage.setItem('eventCost', cost);
+    // Redirect to checkout page
+    window.location.href = 'checkout.html';
+}
+</script>
+<script src="https://unpkg.com/scrollreveal"></script>
+
+
+    
+    
+    <script src="script.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
